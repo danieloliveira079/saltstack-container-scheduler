@@ -9,20 +9,21 @@ front-end:
     notify_progress: True
     app_env: "Development"
     scheduler:
-      service_name: "web"
-      service_port: "8080:80"
-      image_name: "nginx"
+      service_name: "web_node"
+      service_port: "7001:7001"
+      image_name: "danieloliv/nodejs-app-docker"
       tag: "latest"
       options:
         create:
           - "--restart-max-attempts 3"
-          - "--update-delay 30s"
+          - "--update-delay 10s"
           - "--update-parallelism 1"
           - "--replicas 2"
         update:
           - "--update-parallelism 1"
     environment:
       VIRTUAL_HOST: "dev.web.domain.local"
-      VIRTUAL_PORT: "8080"
+      VIRTUAL_PORT: "7001"
+      PORT: "7001"
       NODE_ENV: "production"
       API_URL: "http://api.domain.local"
