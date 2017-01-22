@@ -9,4 +9,6 @@ sudo salt -N swarmmanager cmd.run "docker swarm leave -f"
 sudo salt -N swarmworker cmd.run "docker swarm leave -f"
 
 curl -s -H "Content-Type: application/json" -d '{"replicas": "5", "service_name": "hello_world", "port": "8080", "image": "nginx", "tag": "latest", "secretkey":"JHc3pJDMwRCmVVTw1nqEY9zPNDUJ2gzY6cXvOL17fHgO" }' -k "https://10.0.0.110:8080/hook/swarm/create"
+
+#Oficial
 curl -s -H "Content-Type: application/json" -d '{"service": "front-end", "environment":"development", "secretkey":"JHc3pJDMwRCmVVTw1nqEY9zPNDUJ2gzY6cXvOL17fHgO" }' -k "https://10.0.0.110:8080/hook/swarm/create"
