@@ -1,0 +1,5 @@
+{% set pillar_get = salt['pillar.get'] %}
+{% set postdata = salt['pillar.get']('postdata') %}
+
+{% set environment = pillar_get('environment', 'development')  %}
+{% set service = salt['pillar.get']('{0}:{1}'.format(postdata.service, environment)) %}

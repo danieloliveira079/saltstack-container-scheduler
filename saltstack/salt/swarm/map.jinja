@@ -1,0 +1,2 @@
+{% set pillar_get = salt['pillar.get'] -%}
+{% set service_name = pillar_get('environment', 'development')  %}
