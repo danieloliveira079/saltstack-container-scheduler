@@ -3,7 +3,6 @@ openssl genrsa -out etc/ssl/private/key.pem 4096
 openssl req -new -x509 -key etc/ssl/private/key.pem -out etc/ssl/private/cert.pem -days 1826
 chmod 400 etc/ssl/private/key.pem
 
-
 # Generate Salt Minion key. Must run on the Salt Master
 sudo salt-key --gen-keys=minion
 
