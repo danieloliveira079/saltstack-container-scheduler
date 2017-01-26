@@ -1,3 +1,5 @@
+# WIP - Documentation in progress
+
 # Salt Stack Container Scheduler
 
 This project is a case study that aims to demonstrate the ability of using [Salt Stack](https://saltstack.com/) as a container scheduler and orchestrator that interacts with [Docker Swarm](https://www.docker.com/products/docker-swarm).
